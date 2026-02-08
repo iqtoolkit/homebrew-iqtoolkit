@@ -65,9 +65,19 @@ class IqtoolkitAnalyzer < Formula
   end
 
   def install
-    # Clear PIP_NO_BINARY to allow wheel installation (avoids hatchling build issues)
-    ENV.delete("PIP_NO_BINARY")
-    virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, "python3.11")
+    
+    # Install deps from PyPI (uses wheels, avoids hatchling source build issues)
+    system libexec/"bin/pip", "install",
+           "ollama==0.6.1", "pandas==3.0.0", "openai==2.16.0",
+           "python-dotenv==1.2.1", "pyyaml==6.0.3", "ruamel.yaml==0.19.1",
+           "tqdm==4.67.2", "psycopg==3.3.2", "fastapi==0.128.0", "uvicorn==0.40.0"
+    
+    # Install the main package
+    system libexec/"bin/pip", "install", "--no-deps", buildpath
+    
+    # Link binaries
+    bin.install_symlink Dir[libexec/"bin/iqtoolkit-analyzer"]
   end
 
   test do
