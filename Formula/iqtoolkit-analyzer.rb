@@ -12,20 +12,59 @@ class IqtoolkitAnalyzer < Formula
 
   depends_on "python@3.11"
 
+  # Using wheels (py3-none-any) to avoid hatchling build issues
+  resource "ollama" do
+    url "https://files.pythonhosted.org/packages/py3/o/ollama/ollama-0.6.1-py3-none-any.whl"
+    sha256 "PLACEHOLDER"
+  end
+
+  resource "pandas" do
+    url "https://files.pythonhosted.org/packages/cp311/p/pandas/pandas-3.0.0-cp311-cp311-macosx_11_0_arm64.whl"
+    sha256 "PLACEHOLDER"
+  end
+
+  resource "openai" do
+    url "https://files.pythonhosted.org/packages/py3/o/openai/openai-2.16.0-py3-none-any.whl"
+    sha256 "PLACEHOLDER"
+  end
+
+  resource "python-dotenv" do
+    url "https://files.pythonhosted.org/packages/py3/p/python_dotenv/python_dotenv-1.2.1-py3-none-any.whl"
+    sha256 "PLACEHOLDER"
+  end
+
+  resource "pyyaml" do
+    url "https://files.pythonhosted.org/packages/cp311/P/PyYAML/PyYAML-6.0.3-cp311-cp311-macosx_11_0_arm64.whl"
+    sha256 "PLACEHOLDER"
+  end
+
+  resource "ruamel-yaml" do
+    url "https://files.pythonhosted.org/packages/py3/r/ruamel.yaml/ruamel.yaml-0.19.1-py3-none-any.whl"
+    sha256 "PLACEHOLDER"
+  end
+
+  resource "tqdm" do
+    url "https://files.pythonhosted.org/packages/py3/t/tqdm/tqdm-4.67.2-py3-none-any.whl"
+    sha256 "PLACEHOLDER"
+  end
+
+  resource "psycopg" do
+    url "https://files.pythonhosted.org/packages/py3/p/psycopg/psycopg-3.3.2-py3-none-any.whl"
+    sha256 "PLACEHOLDER"
+  end
+
+  resource "fastapi" do
+    url "https://files.pythonhosted.org/packages/py3/f/fastapi/fastapi-0.128.0-py3-none-any.whl"
+    sha256 "PLACEHOLDER"
+  end
+
+  resource "uvicorn" do
+    url "https://files.pythonhosted.org/packages/py3/u/uvicorn/uvicorn-0.40.0-py3-none-any.whl"
+    sha256 "PLACEHOLDER"
+  end
+
   def install
-    venv = virtualenv_create(libexec, "python3.11")
-    
-    # Install deps from PyPI (uses wheels, avoids hatchling source build issues)
-    system libexec/"bin/pip", "install",
-           "ollama==0.6.1", "pandas==3.0.0", "openai==2.16.0",
-           "python-dotenv==1.2.1", "pyyaml==6.0.3", "ruamel.yaml==0.19.1",
-           "tqdm==4.67.2", "psycopg==3.3.2", "fastapi==0.128.0", "uvicorn==0.40.0"
-    
-    # Install the main package
-    system libexec/"bin/pip", "install", "--no-deps", buildpath
-    
-    # Link binaries
-    bin.install_symlink Dir[libexec/"bin/iqtoolkit-analyzer"]
+    virtualenv_install_with_resources
   end
 
   test do
