@@ -69,7 +69,8 @@ class IqtoolkitAnalyzer < Formula
 
     # Allow wheels just for hatchling/hatch-vcs to avoid the sdist timestamp bug
     ENV["PIP_NO_BINARY"] = ""
-    venv.pip_install "hatchling", "hatch-vcs"
+    venv.pip_install "hatchling"
+    venv.pip_install "hatch-vcs"
 
     # Use source for the rest
     ENV["PIP_NO_BINARY"] = ":all:"
