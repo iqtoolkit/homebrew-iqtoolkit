@@ -7,6 +7,8 @@ class IqtoolkitAnalyzerAT314 < Formula
   sha256 "aa5de0b402ab93e1a29d68f04d8cc5d641b32ad04e896cbb55fedf4ec60a6c9d"
   license "MIT"
 
+  skip_clean "libexec"
+
   keg_only :versioned_formula
 
   depends_on "python@3.14"

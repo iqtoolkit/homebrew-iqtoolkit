@@ -9,6 +9,8 @@ class IqtoolkitAnalyzer < Formula
 
   depends_on "python@3.13"
 
+  skip_clean "libexec"
+
   def install
     venv = libexec
     python = Formula["python@3.13"].opt_bin/"python3.13"
