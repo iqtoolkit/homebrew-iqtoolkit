@@ -2,6 +2,10 @@
 
 Homebrew formulae for [IQToolkit Analyzer](https://github.com/iqtoolkit/iqtoolkit-analyzer) - an AI-powered multi-database performance analyzer for PostgreSQL and MongoDB.
 
+## Python Compatibility
+
+IQToolkit Analyzer supports Python 3.11, 3.12, 3.13, and 3.14. The default formula uses Python 3.13, but versioned formulas are available for other Python versions if you have specific compatibility requirements.
+
 ## Installation
 
 ### Quick Install (Default - Latest Version with Python 3.13)
