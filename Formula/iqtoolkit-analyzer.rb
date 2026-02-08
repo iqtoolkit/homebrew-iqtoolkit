@@ -65,17 +65,7 @@ class IqtoolkitAnalyzer < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.11")
-
-    # Allow wheels just for hatchling/hatch-vcs to avoid the sdist timestamp bug
-    ENV["PIP_NO_BINARY"] = ""
-    venv.pip_install "hatchling"
-    venv.pip_install "hatch-vcs"
-
-    # Use source for the rest
-    ENV["PIP_NO_BINARY"] = ":all:"
-    venv.pip_install resources
-    venv.pip_install_and_link buildpath
+    virtualenv_install_with_resources
   end
 
   test do
