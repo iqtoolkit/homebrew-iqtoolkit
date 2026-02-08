@@ -18,8 +18,13 @@ class IqtoolkitAnalyzerAT312 < Formula
     python = Formula["python@3.12"].opt_bin/"python3.12"
     system python, "-m", "venv", venv
     system venv/"bin/pip", "install", "--upgrade", "pip"
-    system venv/"bin/pip", "install", buildpath
-    bin.install_symlink venv/"bin/iqtoolkit-analyzer"
+    # Copy source to libexec for post_install
+    (libexec/"src").install buildpath.children
+  end
+
+  def post_install
+    system libexec/"bin/pip", "install", libexec/"src"
+    bin.install_symlink libexec/"bin/iqtoolkit-analyzer"
   end
 
   test do
