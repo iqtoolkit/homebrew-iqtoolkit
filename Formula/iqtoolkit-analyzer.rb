@@ -65,6 +65,8 @@ class IqtoolkitAnalyzer < Formula
   end
 
   def install
+    # Clear PIP_NO_BINARY to allow wheel installation (avoids hatchling build issues)
+    ENV.delete("PIP_NO_BINARY")
     virtualenv_install_with_resources
   end
 
