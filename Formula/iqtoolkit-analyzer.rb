@@ -9,6 +9,9 @@ class IqtoolkitAnalyzer < Formula
 
   depends_on "python@3.13"
 
+  # Skip relinking of Python extension modules in the virtualenv
+  skip_clean "libexec"
+
   def install
     venv = libexec/"venv"
     python = Formula["python@3.13"].opt_bin/"python3.13"
