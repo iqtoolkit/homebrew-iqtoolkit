@@ -13,18 +13,22 @@ brew install iqtoolkit-analyzer
 
 ### Install Specific Version with Specific Python
 
-Version-specific formulas include both the package version and Python version for clarity:
+Version-specific formulas include both the package version and Python version:
+
+| Formula | Package Version | Python Version |
+|---------|-----------------|----------------|
+| `iqtoolkit-analyzer@0_3_0rc3_py311` | v0.3.0rc3 | 3.11 |
+| `iqtoolkit-analyzer@0_3_0rc3_py312` | v0.3.0rc3 | 3.12 |
+| `iqtoolkit-analyzer@0_3_0rc3_py313` | v0.3.0rc3 | 3.13 |
+| `iqtoolkit-analyzer@0_3_0rc3_py314` | v0.3.0rc3 | 3.14 |
 
 ```bash
-brew install iqtoolkit-analyzer@0_3_0rc3_py311    # v0.3.0rc3 with Python 3.11
-brew install iqtoolkit-analyzer@0_3_0rc3_py312    # v0.3.0rc3 with Python 3.12
-brew install iqtoolkit-analyzer@0_3_0rc3_py313    # v0.3.0rc3 with Python 3.13
-brew install iqtoolkit-analyzer@0_3_0rc3_py314    # v0.3.0rc3 with Python 3.14
+brew install iqtoolkit-analyzer@0_3_0rc3_py313
 ```
 
 **Note:** Versioned formulas are keg-only. To use them, either:
-- Use the full path: `/opt/homebrew/opt/iqtoolkit-analyzer@0_3_0rc3_py311/bin/iqtoolkit-analyzer`
-- Or link it: `brew link --force iqtoolkit-analyzer@0_3_0rc3_py311`
+- Use the full path: `/opt/homebrew/opt/iqtoolkit-analyzer@0_3_0rc3_py313/bin/iqtoolkit-analyzer`
+- Or link it: `brew link --force iqtoolkit-analyzer@0_3_0rc3_py313`
 
 ## Usage
 
@@ -47,7 +51,7 @@ pip install iqtoolkit-analyzer
 
 ### Installing a Specific Package Version
 
-Homebrew formulas always install the latest version. For a specific package version, use pipx or pip:
+For versions not available as Homebrew formulas, use pipx or pip:
 
 ```bash
 # Specific version with your default Python
@@ -89,16 +93,16 @@ source ~/.zshrc
 
 ### Issues with versioned formulas
 
-Versioned formulas (`@0_3_0rc3_py311`, etc.) are keg-only and not linked by default. To use them:
+Versioned formulas are keg-only and not linked by default. To use them:
 
 ```bash
-brew link --force iqtoolkit-analyzer@0_3_0rc3_py311
+brew link --force iqtoolkit-analyzer@0_3_0rc3_py313
 ```
 
 Or add to your PATH:
 
 ```bash
-export PATH="/opt/homebrew/opt/iqtoolkit-analyzer@0_3_0rc3_py311/bin:$PATH"
+export PATH="/opt/homebrew/opt/iqtoolkit-analyzer@0_3_0rc3_py313/bin:$PATH"
 ```
 
 ## License
