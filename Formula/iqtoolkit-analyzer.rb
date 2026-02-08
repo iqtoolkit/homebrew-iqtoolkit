@@ -73,7 +73,7 @@ class IqtoolkitAnalyzer < Formula
 
     # Use source for the rest
     ENV["PIP_NO_BINARY"] = ":all:"
-    venv.pip_install resources, build_isolation: false
+    venv.pip_install resources
     venv.pip_install_and_link buildpath
   end
 
