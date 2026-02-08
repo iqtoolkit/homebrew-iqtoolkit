@@ -1,6 +1,6 @@
-# Homebrew Formula for IQToolkit Analyzer
+# Homebrew Formula for IQToolkit Analyzer (Python 3.12)
 
-class IqtoolkitAnalyzer < Formula
+class IqtoolkitAnalyzerAT312 < Formula
   include Language::Python::Virtualenv
 
   desc "AI-powered multi-database performance analyzer for PostgreSQL and MongoDB"
@@ -9,10 +9,12 @@ class IqtoolkitAnalyzer < Formula
   sha256 "aa5de0b402ab93e1a29d68f04d8cc5d641b32ad04e896cbb55fedf4ec60a6c9d"
   license "MIT"
 
-  depends_on "python@3.13"
+  keg_only :versioned_formula
+
+  depends_on "python@3.12"
 
   def install
-    venv = virtualenv_create(libexec, "python3.13")
+    venv = virtualenv_create(libexec, "python3.12")
     venv.pip_install buildpath
     bin.install_symlink libexec/"bin/iqtoolkit-analyzer"
   end
