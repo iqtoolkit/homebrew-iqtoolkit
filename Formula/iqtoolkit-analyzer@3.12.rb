@@ -1,8 +1,6 @@
 # Homebrew Formula for IQToolkit Analyzer (Python 3.12)
 
 class IqtoolkitAnalyzerAT312 < Formula
-  include Language::Python::Virtualenv
-
   desc "AI-powered multi-database performance analyzer for PostgreSQL and MongoDB"
   homepage "https://github.com/iqtoolkit/iqtoolkit-analyzer"
   url "https://files.pythonhosted.org/packages/a1/9d/69b58d59a8cd97319b989d608be0a48b81035a5387ba6b1af544518462b8/iqtoolkit_analyzer-0.3.0rc3.tar.gz"
@@ -14,9 +12,12 @@ class IqtoolkitAnalyzerAT312 < Formula
   depends_on "python@3.12"
 
   def install
-    venv = virtualenv_create(libexec, "python3.12")
-    venv.pip_install buildpath
-    bin.install_symlink libexec/"bin/iqtoolkit-analyzer"
+    venv = libexec
+    python = Formula["python@3.12"].opt_bin/"python3.12"
+    system python, "-m", "venv", venv
+    system venv/"bin/pip", "install", "--upgrade", "pip"
+    system venv/"bin/pip", "install", buildpath
+    bin.install_symlink venv/"bin/iqtoolkit-analyzer"
   end
 
   test do
