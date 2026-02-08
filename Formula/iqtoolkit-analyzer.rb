@@ -65,7 +65,6 @@ class IqtoolkitAnalyzer < Formula
   end
 
   def install
-    virtualenv_install_with_resources
     venv = virtualenv_create(libexec, "python3.11")
 
     # Allow wheels just for hatchling/hatch-vcs to avoid the sdist timestamp bug
