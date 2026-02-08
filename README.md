@@ -4,25 +4,27 @@ Homebrew formulae for [IQToolkit Analyzer](https://github.com/iqtoolkit/iqtoolki
 
 ## Installation
 
-### Quick Install (Default Python 3.13)
+### Quick Install (Default - Latest Version with Python 3.13)
 
 ```bash
 brew tap iqtoolkit/iqtoolkit
 brew install iqtoolkit-analyzer
 ```
 
-### Install with Specific Python Version
+### Install Specific Version with Specific Python
+
+Version-specific formulas include both the package version and Python version for clarity:
 
 ```bash
-brew install iqtoolkit-analyzer@3.11    # Python 3.11
-brew install iqtoolkit-analyzer@3.12    # Python 3.12
-brew install iqtoolkit-analyzer@3.13    # Python 3.13
-brew install iqtoolkit-analyzer@3.14    # Python 3.14
+brew install iqtoolkit-analyzer@v0.3.0rc3-py-3.11    # v0.3.0rc3 with Python 3.11
+brew install iqtoolkit-analyzer@v0.3.0rc3-py-3.12    # v0.3.0rc3 with Python 3.12
+brew install iqtoolkit-analyzer@v0.3.0rc3-py-3.13    # v0.3.0rc3 with Python 3.13
+brew install iqtoolkit-analyzer@v0.3.0rc3-py-3.14    # v0.3.0rc3 with Python 3.14
 ```
 
 **Note:** Versioned formulas are keg-only. To use them, either:
-- Use the full path: `/opt/homebrew/opt/iqtoolkit-analyzer@3.11/bin/iqtoolkit-analyzer`
-- Or link it: `brew link --force iqtoolkit-analyzer@3.11`
+- Use the full path: `/opt/homebrew/opt/iqtoolkit-analyzer@v0.3.0rc3-py-3.11/bin/iqtoolkit-analyzer`
+- Or link it: `brew link --force iqtoolkit-analyzer@v0.3.0rc3-py-3.11`
 
 ## Usage
 
@@ -60,8 +62,6 @@ source myenv/bin/activate
 pip install iqtoolkit-analyzer==0.2.0
 ```
 
-> **Note:** Version-specific Homebrew formulas may be added in the future.
-
 ## Updating
 
 ```bash
@@ -89,16 +89,16 @@ source ~/.zshrc
 
 ### Issues with versioned formulas
 
-Versioned formulas (`@3.11`, `@3.12`, etc.) are keg-only and not linked by default. To use them:
+Versioned formulas (`@v0.3.0rc3-py-3.11`, etc.) are keg-only and not linked by default. To use them:
 
 ```bash
-brew link --force iqtoolkit-analyzer@3.11
+brew link --force iqtoolkit-analyzer@v0.3.0rc3-py-3.11
 ```
 
 Or add to your PATH:
 
 ```bash
-export PATH="/opt/homebrew/opt/iqtoolkit-analyzer@3.11/bin:$PATH"
+export PATH="/opt/homebrew/opt/iqtoolkit-analyzer@v0.3.0rc3-py-3.11/bin:$PATH"
 ```
 
 ## License

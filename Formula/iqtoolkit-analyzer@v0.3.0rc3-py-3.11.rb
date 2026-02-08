@@ -1,6 +1,6 @@
-# Homebrew Formula for IQToolkit Analyzer (Python 3.13)
+# Homebrew Formula for IQToolkit Analyzer v0.3.0rc3 (Python 3.11)
 
-class IqtoolkitAnalyzerAT313 < Formula
+class IqtoolkitAnalyzerATV030rc3Py311 < Formula
   desc "AI-powered multi-database performance analyzer for PostgreSQL and MongoDB"
   homepage "https://github.com/iqtoolkit/iqtoolkit-analyzer"
   url "https://files.pythonhosted.org/packages/a1/9d/69b58d59a8cd97319b989d608be0a48b81035a5387ba6b1af544518462b8/iqtoolkit_analyzer-0.3.0rc3.tar.gz"
@@ -11,11 +11,11 @@ class IqtoolkitAnalyzerAT313 < Formula
 
   keg_only :versioned_formula
 
-  depends_on "python@3.13"
+  depends_on "python@3.11"
 
   def install
     venv = libexec
-    python = Formula["python@3.13"].opt_bin/"python3.13"
+    python = Formula["python@3.11"].opt_bin/"python3.11"
     system python, "-m", "venv", venv
     system venv/"bin/pip", "install", "--upgrade", "pip"
     # Copy source to libexec for post_install
