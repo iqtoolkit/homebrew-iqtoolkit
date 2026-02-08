@@ -6,7 +6,7 @@ class IqtoolkitAnalyzer < Formula
 
   desc "AI-powered multi-database performance analyzer for PostgreSQL and MongoDB"
   homepage "https://github.com/iqtoolkit/iqtoolkit-analyzer"
-  url "https://files.pythonhosted.org/packages/source/i/iqtoolkit-analyzer/iqtoolkit-analyzer-0.3.0rc3.tar.gz"
+  url "https://files.pythonhosted.org/packages/a1/9d/69b58d59a8cd97319b989d608be0a48b81035a5387ba6b1af544518462b8/iqtoolkit_analyzer-0.3.0rc3.tar.gz"
   sha256 "aa5de0b402ab93e1a29d68f04d8cc5d641b32ad04e896cbb55fedf4ec60a6c9d"
   license "MIT"
 
