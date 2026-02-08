@@ -1,6 +1,6 @@
 # Homebrew Formula for IQToolkit Analyzer v0.3.0rc3 (Python 3.14)
 
-class IqtoolkitAnalyzerATV030rc3Py314 < Formula
+class IqtoolkitAnalyzerATv030rc3Py314 < Formula
   desc "AI-powered multi-database performance analyzer for PostgreSQL and MongoDB"
   homepage "https://github.com/iqtoolkit/iqtoolkit-analyzer"
   url "https://files.pythonhosted.org/packages/a1/9d/69b58d59a8cd97319b989d608be0a48b81035a5387ba6b1af544518462b8/iqtoolkit_analyzer-0.3.0rc3.tar.gz"
