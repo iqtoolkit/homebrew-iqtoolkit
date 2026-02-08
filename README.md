@@ -16,15 +16,15 @@ brew install iqtoolkit-analyzer
 Version-specific formulas include both the package version and Python version for clarity:
 
 ```bash
-brew install iqtoolkit-analyzer@v0.3.0rc3-py-3.11    # v0.3.0rc3 with Python 3.11
-brew install iqtoolkit-analyzer@v0.3.0rc3-py-3.12    # v0.3.0rc3 with Python 3.12
-brew install iqtoolkit-analyzer@v0.3.0rc3-py-3.13    # v0.3.0rc3 with Python 3.13
-brew install iqtoolkit-analyzer@v0.3.0rc3-py-3.14    # v0.3.0rc3 with Python 3.14
+brew install iqtoolkit-analyzer@0_3_0rc3_py311    # v0.3.0rc3 with Python 3.11
+brew install iqtoolkit-analyzer@0_3_0rc3_py312    # v0.3.0rc3 with Python 3.12
+brew install iqtoolkit-analyzer@0_3_0rc3_py313    # v0.3.0rc3 with Python 3.13
+brew install iqtoolkit-analyzer@0_3_0rc3_py314    # v0.3.0rc3 with Python 3.14
 ```
 
 **Note:** Versioned formulas are keg-only. To use them, either:
-- Use the full path: `/opt/homebrew/opt/iqtoolkit-analyzer@v0.3.0rc3-py-3.11/bin/iqtoolkit-analyzer`
-- Or link it: `brew link --force iqtoolkit-analyzer@v0.3.0rc3-py-3.11`
+- Use the full path: `/opt/homebrew/opt/iqtoolkit-analyzer@0_3_0rc3_py311/bin/iqtoolkit-analyzer`
+- Or link it: `brew link --force iqtoolkit-analyzer@0_3_0rc3_py311`
 
 ## Usage
 
@@ -89,16 +89,16 @@ source ~/.zshrc
 
 ### Issues with versioned formulas
 
-Versioned formulas (`@v0.3.0rc3-py-3.11`, etc.) are keg-only and not linked by default. To use them:
+Versioned formulas (`@0_3_0rc3_py311`, etc.) are keg-only and not linked by default. To use them:
 
 ```bash
-brew link --force iqtoolkit-analyzer@v0.3.0rc3-py-3.11
+brew link --force iqtoolkit-analyzer@0_3_0rc3_py311
 ```
 
 Or add to your PATH:
 
 ```bash
-export PATH="/opt/homebrew/opt/iqtoolkit-analyzer@v0.3.0rc3-py-3.11/bin:$PATH"
+export PATH="/opt/homebrew/opt/iqtoolkit-analyzer@0_3_0rc3_py311/bin:$PATH"
 ```
 
 ## License
