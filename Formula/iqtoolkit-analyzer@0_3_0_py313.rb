@@ -1,21 +1,21 @@
-# Homebrew Formula for IQToolkit Analyzer v0.3.0rc3 (Python 3.14)
+# Homebrew Formula for IQToolkit Analyzer v0.3.0 (Python 3.13)
 
-class IqtoolkitAnalyzerAT030rc3Py314 < Formula
+class IqtoolkitAnalyzerAT030Py313 < Formula
   desc "AI-powered multi-database performance analyzer for PostgreSQL and MongoDB"
   homepage "https://github.com/iqtoolkit/iqtoolkit-analyzer"
-  url "https://files.pythonhosted.org/packages/a1/9d/69b58d59a8cd97319b989d608be0a48b81035a5387ba6b1af544518462b8/iqtoolkit_analyzer-0.3.0rc3.tar.gz"
-  sha256 "aa5de0b402ab93e1a29d68f04d8cc5d641b32ad04e896cbb55fedf4ec60a6c9d"
+  url "https://files.pythonhosted.org/packages/62/f2/0ceaf3d141b72a5936f98ccb01bca232f1f7c699df78d7179fcb5667e557/iqtoolkit_analyzer-0.3.0.tar.gz"
+  sha256 "454839152e1a4aa0f81c61f9b6b193aca98e75ac265dbdc786ac3ba70a8d675"
   license "MIT"
 
   skip_clean "libexec"
 
   keg_only :versioned_formula
 
-  depends_on "python@3.14"
+  depends_on "python@3.13"
 
   def install
     venv = libexec
-    python = Formula["python@3.14"].opt_bin/"python3.14"
+    python = Formula["python@3.13"].opt_bin/"python3.13"
     system python, "-m", "venv", venv
     system venv/"bin/pip", "install", "--upgrade", "pip"
     # Copy source to libexec for post_install
